@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Saisie de vos données pour la prédiciotn</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.TV.label}}<br>
+            {{ form.TV(size = 20) }}
+        </p>
+        <p>
+            {{ form.Radio.label }}<br>
+            {{ form.Radio(size = 20) }}
+        </p>
+        <p>
+            {{ form.Newspaper.label }}<br>
+            {{ form.Newspaper(size = 20) }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+{% endblock %}
