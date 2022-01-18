@@ -66,7 +66,7 @@ def form_input():
 
         #y = requests.get("http://127.0.0.1:5000/prediction", json=data_in)
         #port = os.environ.get("PORT", 5000)
-        y = requests.get("http://127.0.0.1:5000/prediction", json=data_in)
+        y = requests.get("http://localhost:5000/prediction", json=data_in)
         print(y.status_code)
         print(y.json()["Prediction:"])
 
