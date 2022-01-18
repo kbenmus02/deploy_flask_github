@@ -5,7 +5,7 @@ import pickle
 import numpy as np
 # modules nécessaires pour le notebook
 import pickle
-#mport os
+import os
 
 mydict = pickle.load(open("model_params.pkl", "rb"))
 
@@ -66,7 +66,10 @@ def form_input():
 
         #y = requests.get("http://127.0.0.1:5000/prediction", json=data_in)
         #port = os.environ.get("PORT", 5000)
-        y = requests.get("http://localhost:5000/prediction", json=data_in)
+        port = os.environ.get("PORT", 5000)
+        #app.run(debug=False, host="0.0.0.0", port = port)
+        y = requests.get(f"http://localhost:{port}/prediction", json=data_in)
+
         print(y.status_code)
         print(y.json()["Prediction:"])
 
